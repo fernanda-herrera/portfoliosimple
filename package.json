@@ -1,0 +1,30 @@
+{
+  "name": "portafolio-simple",
+  "version": "1.0.0",
+  "description": "simple portfolio",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernanda-herrera/portfoliosimple.git"
+  },
+  "keywords": [
+    "portfolio",
+    "visual",
+    "designer"
+  ],
+  "author": "fernanda herrera",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/fernanda-herrera/portfoliosimple/issues"
+  },
+  "homepage": "https://github.com/fernanda-herrera/portfoliosimple#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "darkmode-js": "^1.5.7"
+  }
+}

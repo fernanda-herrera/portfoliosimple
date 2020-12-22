@@ -1,0 +1,418 @@
+$border_radius: 10px;
+$color-black: rgb(32,36,42);
+$color-white: #ffffff;
+$color-gray-light: rgba($color-white, .15);
+$color-gray-dark: rgba($color-black, .15);
+$color-component-dark:rgb(21, 22, 24);
+$color-component-light:rgb(237,238,242);
+$color-input-dark: #3a3842;
+$color-input-light: #eee;
+$color-blue-light: #2bfea5;
+$color-blue-king: #0093EE;
+$drop-shadow:
+  -12px -12px 30px 5px rgba(255, 255, 255, 0.9),
+  12px 12px 30px 5px rgba(50, 58, 73, 0.2);
+
+$inset-shadow:
+  inset -12px -12px 30px 5px rgba(255, 255, 255, 0.9),
+  inset 12px 12px 30px 5px rgba(50, 58, 73, 0.2);
+$padding: 50px;
+
+
+:root {
+  $color-page-background: #f7f7f7;
+  $color-text: #{$color-black};
+  $color-border: #{$color-black};
+  $color-article-background: #{$color-white};
+  $color-article-shadow: #{$color-gray-dark};
+  $color-card: #{$color-white};
+  $color-navbar: #{$color-component-light};
+  $color-component: #{$color-component-light};
+  $logo: url('../logo-dark.png');
+  $main-button: #{$color-blue-light};
+  $other-button: #{$color-blue-king};
+
+  
+}
+
+[data-theme="dark"]  {
+  $color-page-background: #{$color-black};
+  $color-text: #{$color-white};
+  $color-border: #{$color-white};
+  $color-article-background: #{$color-gray-light};
+  $color-article-shadow: #{$color-gray-dark};
+  $color-card: #{$color-gray-dark};
+  $color-navbar: #{$color-component-dark};
+  $color-component: #{$color-component-dark};
+  $logo: url('../logo-white.png'); 
+  $main-button: #{$color-blue-light};
+  $other-button: #{$color-blue-king};
+}
+
+
+/
+* {
+  transition: all .15s ease;
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  background-color: var($color-page-background);
+  font: 1.1em/1.4;
+  color: var($color-text);
+}
+
+h1{
+  color:var($color-text);
+}
+
+main {
+  margin: auto;
+}
+
+article {
+  padding: 2rem;
+  background-color: var($color-article-background);
+  box-shadow: 6px 6px 0 0 var($color-article-shadow);
+}
+
+select{
+  background-color:var($color-page-background)!important; 
+  color: var($color-text)!important;
+}
+.logo { 
+  background-image: var($logo);
+  background-size: 170px 60px;
+  margin-right: 10vw;
+}
+.navbar{
+  background-color: var($color-component) !important;
+}
+
+.navbar-link{
+  color: var($color-text)!important;
+}
+
+.nav-item{
+  color:var($color-text);
+  border: none;
+  margin: 0 20px 0 20px;
+}
+
+.navbar-nav{
+  color: #ffffff !important;
+}
+
+.navbar-dark{
+  color: #ffffff !important;
+}
+
+.btn{
+  color:var($color-text);
+}
+
+.btn:hover{
+background-color: #10D6E6 !important; 
+}
+
+.btn-menu{
+  background-color: var($color-page-background) !important;
+  color:var($color-text);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 25px 30px #0000001A;
+  background-repeat: no-repeat; 
+  padding: 10px 24px !important;
+}
+.btn-menu:hover{
+  background-color: #10D6E6 !important; 
+}
+
+.btn-menu:active{
+  background-color: #10D6E6 !important;
+}
+
+.btn-menu:focus{
+  background-color: #10D6E6 !important;
+}
+
+button:hover {
+  background-color: #aaa;
+}
+
+.btn-primary{
+  background-color: var($color-component) !important;
+  width: 400px;
+  height: 50px;
+  color:var($color-text);
+  border: none;
+  padding: 5px 40px;
+  box-shadow: 0px 25px 30px #0000001A;
+}
+
+.btn-primary:hover{
+ background-color: #10D6E6 !important; 
+}
+
+.btn-create{
+  margin-left: 83vw !important;
+  box-shadow: 0px 25px 30px #0000001A; 
+}
+/*Simple css to style it like a toggle switch*/
+.theme-switch-wrapper {
+  display: flex;
+  align-items: top;
+  max-width: 130px;
+
+  em {
+    margin-left: 7px;
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
+}
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 5.2vw;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: white;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: black;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #ffffff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+nav {
+  ul {
+    margin: 0;
+    padding:var($padding)!important;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: var($padding)!important;
+    text-decoration: none;
+  }
+}
+
+.card 
+{
+  background-color: var($color-card);
+  border: none;
+  box-shadow: 0px 25px 30px #0000001A;
+}
+
+.form-group {
+    margin-bottom: 3rem;
+    width: 400px;
+    height: 50px;
+}
+
+.test2 {
+  width: 100%;
+  height: 90%;
+}
+
+table{
+  color: var($color-text)!important;
+}
+
+.table th, .table td {
+    padding: 1rem !important;
+}
+
+a{
+  color:var var($main-button)!important;
+  text-decoration: underline;
+}
+
+@media (min-width: 1200px){
+  .container  {
+    max-width: 90vw;
+}
+}
+
+.logout{
+  background-image:url('../logout.svg'); 
+  width: 35px;
+  height: 35px;
+  font-size:14px;
+}
+
+#login{
+  color: var($color-text)!important;
+}
+
+em{
+  color: var($color-text)!important;
+}
+
+.card-body {
+   color: var($color-text)!important;
+}
+.div-indicators{
+   color: var($color-text)!important;
+}
+
+.label{
+   color: var($color-text)!important;
+}
+
+.card-header:first-child {
+  font-weight: bold !important;
+  font-size: 24px;
+  border-bottom: none !important;
+}
+
+[data-theme='dark'] .form-control{
+  background-color:var($color-gray-light)!important;
+  margin: 0;
+  background: #3a3842;
+  border-radius: 7px;
+  box-shadow: inset 5px 5px 8px 1px rgba(0, 0, 0, 0.2), inset -5px -5px 8px 0px rgba(77, 71, 100, 0.3), inset -1px -2px 2px 0px rgba(77, 71, 100, 0.3);
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+.form-control{
+  background-color:var($color-input-light)!important;
+  margin: 0;
+  border-radius: 7px;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.25), inset -5px -5px 10px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+  border: none;
+  color: var($color-text)!important;
+}
+
+a:active {
+  background-color: #10D6E6 !important; 
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #495057;
+    background-color: var($color-card);
+   
+}
+
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+.navbar{
+  background-color: var($color-component) !important;
+  border-bottom: none !important;
+}
+.navbar-link{
+  color: var($color-text)!important;
+}
+
+
+/* General
+$$$$$$$$$$$$$$$$$$$$$$$$$ */
+.hidden {
+    display: none;
+}
+
+/* Bootstrap
+$$$$$$$$$$$$$$$$$$$$$$$$$ */
+.bg-itics {
+    background-color: #111112;
+}
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+  padding-right: 15vw;
+}
+
+/* Sticky footer styles
+$$$$$$$$$$$$$$$$$$$$$$$$$ */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 3px 3px 20px #24415D4D;
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+$$$$$$$$$$$$$$$$$$$$$$$$$ */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+
+.checkbox{
+  width: 30px;
+  height: 30px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  border-top:none !important;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
